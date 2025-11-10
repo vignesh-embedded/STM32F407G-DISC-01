@@ -29,5 +29,39 @@ It demonstrates strong fundamental knowledge of STM32 architecture and embedded 
 ### 🔹 Data Handling
 The 16-bit signed acceleration data is reconstructed from two 8-bit registers:
 
-```c
-accel_x = (int16_t)((rx_data[1] << 8) | rx_data[0]);
+## 📌 Hardware & Peripheral Configuration
+
+| Component | Function | Configuration |
+|------------|-----------|----------------|
+| **Microcontroller** | STM32F407VGT6 | - |
+| **Board** | STM32F407G-DISC1 | Discovery Kit |
+| **Sensor** | LIS3DSH | 3-Axis Accelerometer |
+| **SPI Pins (GPIOA)** | PA5 (SCK), PA6 (MISO), PA7 (MOSI) | Alternate Function AF5 |
+| **Chip Select (GPIOE)** | PE3 | General Purpose Output |
+| **Status LEDs (GPIOD)** | PD12 (Green), PD13 (Orange), PD14 (Red), PD15 (Blue) | General Purpose Output |
+
+---
+
+## 🛠️ Toolchain and Environment
+
+| Tool | Description |
+|------|--------------|
+| **IDE / Compiler** | STM32CubeIDE or ARM GCC |
+| **Operating System** | Zorin OS (Linux) |
+| **Language** | Embedded C |
+| **MCU Architecture** | ARM Cortex-M4 (STM32F407) |
+
+---
+
+## 📁 Code Structure
+
+`main.c` contains the following key functions:
+
+| Function | Description |
+|-----------|--------------|
+| `main()` | Initializes RCC, GPIO, SPI; configures LIS3DSH; continuously reads acceleration and lights LEDs. |
+| `spi_transmit_receive(uint8_t data)` | Performs SPI data exchange using TXE/RXNE polling. |
+| `lis_write(uint8_t reg_addr, uint8_t data)` | Sends register address and data with manual CS control. |
+| `delay(uint32_t count)` | Simple blocking delay loop. |
+
+---
