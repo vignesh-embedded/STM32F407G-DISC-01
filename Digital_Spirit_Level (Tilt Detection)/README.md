@@ -65,3 +65,19 @@ The 16-bit signed acceleration data is reconstructed from two 8-bit registers:
 | `delay(uint32_t count)` | Simple blocking delay loop. |
 
 ---
+## 💡 Expected Behavior
+
+| Tilt Direction | LED | Color |
+|----------------|-----|-------|
+| Left | PD12 | 🟢 Green |
+| Forward | PD13 | 🟠 Orange |
+| Right | PD14 | 🔴 Red |
+| Backward | PD15 | 🔵 Blue |
+
+---
+
+## 🧑‍💻 Author
+
+**Vignesh Vasudevan**  
+📍 Chennai, India  
+🎓 B.E. – ECE | Embedded Systems Enthusiast    
