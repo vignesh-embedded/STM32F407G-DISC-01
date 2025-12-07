@@ -1,0 +1,18 @@
+# STM32CubeIDE generated files
+Debug/
+Release/
+*.launch
+*.settings/
+*.ioc-backup
+*.bin
+*.elf
+*.list
+*.map
+*.o
+*.d
+*.dep
+*.bak
+*.swp
+# OS files
+.DS_Store
+Thumbs.db
